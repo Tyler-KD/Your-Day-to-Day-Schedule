@@ -23,3 +23,10 @@ $(function () {
 });
 
 $('#currentDay').text(dayjs().format('dddd, MMMM D'));
+$('#currentTime').text(dayjs().format('HH:mm:ss A'));
+
+// $('#hour-9').addClass('present');
+
+function assignTimeBlocks(){
+
+}

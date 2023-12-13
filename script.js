@@ -54,4 +54,16 @@ var textareaValue = $(this).siblings(".description").val()
 var hour = $(this).parent().attr("id")
 // localStorage.setItem saves the hour and text for each time-block
 localStorage.setItem(hour,textareaValue)
-})
+});
+
+// function renderHourText () {
+//   let text = localStorage.getItem(hour,textareaValue)
+// }
+
+var x = localStorage.key(0);
+
+// const hourLocal = localStorage.getItem(hour);
+// const textLocal = localStorage.getItem(textareaValue);
+
+// hourLocal ();
+// textLocal ();

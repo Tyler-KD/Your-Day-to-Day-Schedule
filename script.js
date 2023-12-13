@@ -27,6 +27,21 @@ $('#currentTime').text(dayjs().format('HH:mm:ss A'));
 
 // $('#hour-9').addClass('present');
 
-function assignTimeBlocks(){
+// function assignTimeBlocks(){
 
+// }
+
+const nodeList = document.querySelectorAll("div.hour");
+for (let i = 0,; i < nodeList.length; i++) {
+  nodeList[i]
+  if(elementid < currentTime){
+    console.log("add past class")
+  }
+  else if(elementid === currentTime){
+    console.log("add current class")
+  }
+  else{
+    console.log("add future class")
+  }
 }
+

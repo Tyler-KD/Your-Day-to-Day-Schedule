@@ -22,11 +22,14 @@ $(function () {
   // TODO: Add code to display the current date in the header of the page.
 });
 
+// $('#currentDay') displays the the current day
 $('#currentDay').text(dayjs().format('dddd, MMMM D'));
 $('#currentTime').text(dayjs().format('h:mm A'));
 
+
 // Variable showing current time in 24-hour format without leading zeros
 var currentTimeVar = dayjs().format('H');
+
 
 // loop over time blocks
 $('.time-block').each(function () {
@@ -46,6 +49,7 @@ $('.time-block').each(function () {
   }
 });
 
+
 // event listener enables the saveBtn on click to store data to localStorage
 // var taxtareaValue grabs .saveBtn's sibling .description value
 // var hour grabs .saveBtn's parent div attribute "id" which is each time-block's hour
@@ -56,14 +60,14 @@ var hour = $(this).parent().attr("id")
 localStorage.setItem(hour,textareaValue)
 });
 
-// function renderHourText () {
-//   let text = localStorage.getItem(hour,textareaValue)
-// }
 
-var x = localStorage.key(0);
-
-// const hourLocal = localStorage.getItem(hour);
-// const textLocal = localStorage.getItem(textareaValue);
-
-// hourLocal ();
-// textLocal ();
+// Using key values, these methods retrieve the key hour in the local drive and returns its value text associated with #hour- and .description
+$('#hour-9 .description').val(localStorage.getItem('hour-9'));
+$('#hour-10 .description').val(localStorage.getItem('hour-10'));
+$('#hour-11 .description').val(localStorage.getItem('hour-11'));
+$('#hour-12 .description').val(localStorage.getItem('hour-12'));
+$('#hour-13 .description').val(localStorage.getItem('hour-13'));
+$('#hour-14 .description').val(localStorage.getItem('hour-14'));
+$('#hour-15 .description').val(localStorage.getItem('hour-15'));
+$('#hour-16 .description').val(localStorage.getItem('hour-16'));
+$('#hour-17 .description').val(localStorage.getItem('hour-17'));

@@ -23,7 +23,10 @@ $(function () {
 });
 
 $('#currentDay').text(dayjs().format('dddd, MMMM D'));
-$('#currentTime').text(dayjs().format('h A'));
+$('#currentTime').text(dayjs().format('h:mm A'));
+
+// Variable showing current time in 24-hour format without leading zeros
+var currentTimeVar = dayjs().format('H');
 
 // loop over time blocks
 $('.time-block').each(function () {
@@ -31,9 +34,9 @@ $('.time-block').each(function () {
   var blockHour = parseInt($(this).attr('id').split('-')[1]);
 
   // check if textboxes have moved past this hour
-  if (blockHour < currentTime) {
+  if (blockHour < currentTimeVar) {
     $(this).addClass('past');
-  } else if (blockHour === currentTime) {
+  } else if (blockHour === currentTimeVar) {
     $(this).removeClass('past');
     $(this).addClass('present');
   } else {

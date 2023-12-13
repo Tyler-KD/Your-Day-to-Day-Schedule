@@ -36,7 +36,7 @@ $('.time-block').each(function () {
   // check if textboxes have moved past this hour
   if (blockHour < currentTimeVar) {
     $(this).addClass('past');
-  } else if (blockHour === currentTimeVar) {
+  } else if (blockHour == currentTimeVar) {
     $(this).removeClass('past');
     $(this).addClass('present');
   } else {
@@ -45,3 +45,13 @@ $('.time-block').each(function () {
     $(this).addClass('future');
   }
 });
+
+// event listener enables the saveBtn on click to store data to localStorage
+// var taxtareaValue grabs .saveBtn's sibling .description value
+// var hour grabs .saveBtn's parent div attribute "id" which is each time-block's hour
+$(".saveBtn").on("click",function(){
+var textareaValue = $(this).siblings(".description").val()
+var hour = $(this).parent().attr("id")
+// localStorage.setItem saves the hour and text for each time-block
+localStorage.setItem(hour,textareaValue)
+})

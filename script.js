@@ -23,25 +23,22 @@ $(function () {
 });
 
 $('#currentDay').text(dayjs().format('dddd, MMMM D'));
-$('#currentTime').text(dayjs().format('HH:mm:ss A'));
+$('#currentTime').text(dayjs().format('h A'));
 
-// $('#hour-9').addClass('present');
+// loop over time blocks
+$('.time-block').each(function () {
+  //Splits the id value and only takes the number after hyphen
+  var blockHour = parseInt($(this).attr('id').split('-')[1]);
 
-// function assignTimeBlocks(){
-
-// }
-
-const nodeList = document.querySelectorAll("div.hour");
-for (let i = 0,; i < nodeList.length; i++) {
-  nodeList[i]
-  if(elementid < currentTime){
-    console.log("add past class")
+  // check if textboxes have moved past this hour
+  if (blockHour < currentTime) {
+    $(this).addClass('past');
+  } else if (blockHour === currentTime) {
+    $(this).removeClass('past');
+    $(this).addClass('present');
+  } else {
+    $(this).removeClass('past');
+    $(this).removeClass('present');
+    $(this).addClass('future');
   }
-  else if(elementid === currentTime){
-    console.log("add current class")
-  }
-  else{
-    console.log("add future class")
-  }
-}
-
+});

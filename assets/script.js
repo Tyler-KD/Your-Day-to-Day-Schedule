@@ -36,7 +36,7 @@ $('.time-block').each(function () {
   //Splits the id value and only takes the number after hyphen
   var blockHour = parseInt($(this).attr('id').split('-')[1]);
 
-  // check if textboxes have moved past this hour
+  // check if time blocks have moved past this hour
   if (blockHour < currentTimeVar) {
     $(this).addClass('past');
   } else if (blockHour == currentTimeVar) {

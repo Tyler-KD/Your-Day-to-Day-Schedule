@@ -8,8 +8,7 @@ In Your-Day-to-Day-Schedule project, a daily scheduler was created for users to 
 
 To use Your-Day-to-Day-Schedule, open up the webpage in a browser and choose a 9am-5pm work hour time-block to make an entry. All of the time-blocks are checked to see if they are before, during, or past the current hour.  If time-blocks take place before the current hour of the day, then those time-blocks will be color-coded green with a CSS future class. If a time-block takes place during the current hour, then that time-block will be color-coded red with a CSS present class. If time-blocks take place after the current hour of the day, then those time-blocks will be color-coded gray with a CSS past class.
 
-After saving entries to time-blocks using the save button icon to the right of each block, then the page can be refreshed with the specified text corresponding to each time-block.  Throughout the day, the text-entries can be edited while the time-blocks change colors depending on the current hour.  All of thes features should give a more aesthetically pleasing  
-and dynamic webpage to keep track of daily activities during a 9am-5pm workday schedule.
+After saving entries to time-blocks using the save button icon to the right of each block, then the page can be refreshed with the specified text corresponding to each time-block.  Throughout the day, the text-entries can be edited while the time-blocks change colors depending on the current hour.  All of thes features should give a more aesthetically pleasing and dynamic webpage to keep track of daily activities during a 9am-5pm workday schedule.
 
 Attached is a screenshot:
 

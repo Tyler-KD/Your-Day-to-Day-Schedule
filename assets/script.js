@@ -1,6 +1,3 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
@@ -24,6 +21,7 @@ $(function () {
 
 // $('#currentDay') displays the the current day
 $('#currentDay').text(dayjs().format('dddd, MMMM D'));
+// $('#currentTime') displays the current time in 12:00 PM format
 $('#currentTime').text(dayjs().format('h:mm A'));
 
 
@@ -34,9 +32,15 @@ var currentTimeVar = dayjs().format('H');
 // loop over time blocks
 $('.time-block').each(function () {
   //Splits the id value and only takes the number after hyphen
+  // parseInt converts a string to an integer
+  // With the string of "hour-9," "9" is parsed into the integer 9
   var blockHour = parseInt($(this).attr('id').split('-')[1]);
 
   // check if time blocks have moved past this hour
+  // If blockHour < currentTimeVar, then add 'past' class
+  // If blockHour == currentTimeVar, then remove 'past' class and add 'present' class
+  // If blockHour > currentTimeVar, then remove 'past' class and 'present' class, add 'future' class
+
   if (blockHour < currentTimeVar) {
     $(this).addClass('past');
   } else if (blockHour == currentTimeVar) {
@@ -62,6 +66,7 @@ localStorage.setItem(hour,textareaValue)
 
 
 // Using key values, these methods retrieve the key hour in the local drive and returns its value text associated with #hour- and .description
+// When the user refreshes the page, the saved text is displayed for each time-block
 $('#hour-9 .description').val(localStorage.getItem('hour-9'));
 $('#hour-10 .description').val(localStorage.getItem('hour-10'));
 $('#hour-11 .description').val(localStorage.getItem('hour-11'));
